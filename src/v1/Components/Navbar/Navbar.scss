@@ -98,5 +98,11 @@ padding-left: 20px;
 box-sizing: border-box;
 border: 0.5px solid rgb(121, 116, 116);
 border-style: groove;
-
+}
+.nav-link{
+    text-decoration: none;
+    color: inherit;
+}
+.nav-link:hover{
+    color: #20B486;
 }

@@ -16,10 +16,10 @@ export const  Navbar = ()=>{
                     <input type='text' className='search-query' placeholder='want to learn ? search courses'/>
                 </div>
                 <div className='nav-links'>
-                       <div>Home</div>
-                       <div>About Us</div>
-                       <div>Contact Us</div>
-                       <div>Courses</div>
+                       <Link to="/" className='nav-link'>Home</Link>
+                       <Link to="/about-us"  className='nav-link'>About Us</Link>
+                       <Link to="/"  className='nav-link'>Contact Us</Link>
+                       <Link to="/"  className='nav-link'>Courses</Link>
                 </div>
                 <div className='navbar-auth'>
                     <button className='login-button'> Login</button>

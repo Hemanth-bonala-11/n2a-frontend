@@ -1,7 +1,10 @@
 import './Banner.scss'
-import BannerFrontImage from '../../../Assets/images/banner-front-image.jpg'
-
+import BannerFrontImage from '../../../Assets/images/banner-front-image.png';
+import bannerImageBackground from '../../../Assets/images/banner-image-background.png'
+import bannerNoofCourses from '../../../Assets/images/banner-no-of-courses.png'
+import { useState } from 'react';
 export const Banner = ()=>{
+    const [no_of_courses, setNoofCourses] = useState(200)
     return (
         <div>
             <div className='banner-wrapper'>
@@ -15,8 +18,16 @@ export const Banner = ()=>{
                     </div>
 
                 </div>
-                <div className='banner-image'>
+                <div className='banner-images'>
                     <img src={BannerFrontImage} className='banner-front-image'/>
+                    <img src={bannerImageBackground} className='banner-background-image'/>
+                </div>
+                <div className='banner-no-of-courses'>
+                    <img src={bannerNoofCourses} className='banner-no-of-courses-icon'/>
+                    <div className='banner-no-of-courses-description'>
+                    <h4>{no_of_courses}</h4>
+                    <div className='banner-no-of-courses-description-text'>Courses</div>
+                    </div>
                 </div>
             </div>
 
