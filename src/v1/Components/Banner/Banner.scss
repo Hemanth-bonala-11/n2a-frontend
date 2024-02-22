@@ -1,0 +1,58 @@
+.banner-wrapper{
+    background-color: rgb(251,254,253);
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    padding-top: 8vh;
+    gap: 15vw;
+    flex-wrap: wrap;
+    
+}
+.banner-information{
+    max-width: 35vw;
+}
+.black-heading{
+    font-size: 4rem;
+    font-weight: bold;
+    color: black;
+    letter-spacing: -0.5px;
+    text-transform: capitalize;
+
+}
+.green-heading{
+    font-weight: bold;
+    font-size: 4rem;
+    color: #20b486;
+    letter-spacing: -0.5px;
+    text-transform: capitalize;
+}
+.banner-front-image{
+    height: 50vh;
+    background-color: transparent;
+    background-blend-mode: multiply;
+}
+.banner-description{
+    /* Learn UI-UX Design skills with weekend UX . The latest online learning system and material that help your knowledge growing. */
+
+width: 470px;
+height: 58px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 180%;
+margin-top: 6rem;
+
+color: #646464;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+}
+.banner-get-started{
+    margin-top: 3vh;
+}
