@@ -15,7 +15,7 @@ export const  Navbar = ()=>{
     const [showLogin, setShowLogin] = useState(false)
     const [showSignup, setShowSignup] = useState(false) 
     const {auth} = useSelector(mapStatetoProps);
-    const isLoggedIn = localStorage.getItem('auth_token')
+    const isLoggedIn = localStorage.getItem("auth_token ")
     const [openProfile, setOpenProfile] = useState(false);
     return (
         <div>
@@ -55,8 +55,8 @@ export const  Navbar = ()=>{
                     {
                         openProfile &&
                     <div className="menu-list">
-                    <Link to="/myorders" onClick={() => setOpenProfile(false)} className="menu-item">
-                      <div className="menu-item">Recent Orders</div>
+                    <Link to="/myorders" onClick={() => setOpenProfile(false)}  className='menu-link'>
+                      <div className="menu-item">Dashboard</div>
                     </Link>
                       <div className="menu-item">
                         Logout
