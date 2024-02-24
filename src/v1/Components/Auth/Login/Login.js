@@ -19,6 +19,7 @@ export const Login = ({setShowLogin})=>{
         setLoading(true);
         try{
         const response = await login(formData);
+        console.log(response.data,"login response");
         toast.success("logged in successfully");
         setLoading(false);
         setShowLogin(false)

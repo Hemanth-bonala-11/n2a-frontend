@@ -42,6 +42,7 @@ export const Signup = ({setShowSignup})=>{
         }
         formData["otp"] = otp
         const response = await register(formData);
+        console.log(response.data,"signup response");
         toast.success("user registered successfully");
         setShowOtp(false);
         setShowSignup(false);
@@ -49,8 +50,6 @@ export const Signup = ({setShowSignup})=>{
     }catch(err){
         toast.error(err.response.data.message)
     }
-
-
     }
 
     return (

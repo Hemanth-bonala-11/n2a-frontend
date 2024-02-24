@@ -10,6 +10,9 @@ import { Router, Routes, Route } from 'react-router';
 import Home from './v1/Pages/Home';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+import configureStore from './v1/Redux/store';
+
 function App() {
   return (
     <div className="App">

@@ -52,6 +52,9 @@ export const Footer = ({auth})=>{
                     </div>
                 </div>
             </div>
+            <div className='footer-copyright-section'>
+            © {new Date().getFullYear()} Neophyte2Adept. All rights reserved.
+            </div>
         </div>
     )
 }

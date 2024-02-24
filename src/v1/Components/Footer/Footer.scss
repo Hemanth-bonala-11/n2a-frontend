@@ -6,11 +6,18 @@
   min-height: 37vh;
   padding-top: 35px;
   margin-top: 20px;
+  .footer-copyright-section{
+    color: white;
+    margin-top: 5%;
+    margin-left: 40%;
+    padding-bottom: 1%;
+}
 }
 .footer-wrapper{
     display: flex;
     gap: 45px;
 }
+
 .footer-description{
 width: 320px;
 height: 48px;
