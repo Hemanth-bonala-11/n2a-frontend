@@ -14,6 +14,8 @@ import { Provider } from 'react-redux';
 
 
 import configureStore from './v1/Redux/store';
+import ContactUs from './v1/Components/ContactUs';
+import CourseCard from './v1/Components/CourseCard';
 
 export const { store } = configureStore();
 function App() {
@@ -24,6 +26,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/about-us" element={<AboutUs/>}/>
+        <Route path='/contact-us' element={<ContactUs/>}/>
+        <Route path='/course-card' element={<CourseCard/>}/>
       </Routes>
       <Footer/>
       <ToastContainer/>

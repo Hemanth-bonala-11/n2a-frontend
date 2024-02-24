@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { actionsCreator } from '../../../Redux/actions/actionsCreator'
 const mapStatetoProps = ({auth})=>({auth})
 
-export const Signup = ({setShowSignup})=>{
+export const Signup = ({setShowSignup, setShowLogin})=>{
     const [formData, setFormData] = useState({});
     const [otp, setOtp] = useState(null);
     const [showOtp, setShowOtp] = useState(false);
@@ -53,7 +53,8 @@ export const Signup = ({setShowSignup})=>{
         toast.success("user registered successfully");
         setShowOtp(false);
         setShowSignup(false);
-        setLoading(false)
+        setLoading(false);
+        setShowLogin(true)
     }catch(err){
         toast.error(err.response.data.message)
     }

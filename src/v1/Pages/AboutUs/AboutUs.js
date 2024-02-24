@@ -2,9 +2,14 @@ import { useEffect, useState } from "react"
 import { AboutusBanner } from "../../Components/AboutusBanner/AboutusBanner";
 import image1 from '../../../Assets/images/about-us-banner-image-1.png';
 import image2 from '../../../Assets/images/about-us-banner-image-2.png';
+import { useSelector } from "react-redux";
+const mapStatetoProps = ({auth}) => ({auth})
 
 export const AboutUs = ()=>{
-    const [aboutUsData, setAboutUsData] = useState([])
+    const [aboutUsData, setAboutUsData] = useState([]);
+    const {auth} = useSelector(mapStatetoProps);
+
+    console.log(auth, "redux auth ");
     useEffect(()=>{
         setAboutUsData([
             {

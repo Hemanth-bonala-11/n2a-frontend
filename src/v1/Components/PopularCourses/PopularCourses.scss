@@ -52,7 +52,7 @@ flex-grow: 0;
     align-items: center;
     width: 100vw;
     justify-content: center;
-    margin-left: 3vw;
+    
     background-color: white;
 }
 .featured-courses-supporting-text{
@@ -68,12 +68,18 @@ line-height: 30px;
 /* identical to box height, or 150% */
 
 color: #667085;
-
-
 /* Inside auto layout */
 flex: none;
 order: 1;
 align-self: stretch;
 flex-grow: 0;
 
+}
+.featured-courses-headings{
+    margin-left: 8vw;
+}
+.course-cards{
+    margin-left: 10%;
+    
+    margin-top: 5%;
 }

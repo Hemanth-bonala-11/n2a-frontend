@@ -2,6 +2,7 @@
 import './PopularCourses.scss'
 import { useEffect, useState } from 'react'
 import { CategoryCard } from '../Courses/CategoryCard'
+import CourseCard from '../CourseCard'
 
 export const PopularCourses = ()=>{
     const [courseCategories, setCourseCategories] = useState([])
@@ -24,18 +25,19 @@ export const PopularCourses = ()=>{
     ])
     },[])
     return (
+        <div>
         <div className='featured-courses-wrapper'>
+            
             <div className='featured-courses-headings'>
                 <div className='featured-courses-heading'>Explore Programs</div>
                 <div className='featured-courses-subheading'>Our Most Popular Class</div>
                 <div className='featured-courses-supporting-text'>Let's join our famous class, the knowledge provided will definitely be useful for you.</div>
             </div>
-            <div className='category-cards'>
-
-                
+            </div>
+            <div className='course-cards'>
                 {
                     courseCategories.length!==0 && courseCategories.slice(0,3).map((category, index)=>{
-                        return (<CategoryCard category= {category} key={index}/>)
+                        return (<CourseCard/>)
                     })
                 }
                 </div>

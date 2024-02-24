@@ -17,7 +17,7 @@ export const  Navbar = ()=>{
                 <Login setShowLogin={setShowLogin}/>
             </Modal>
             <Modal show={showSignup}>
-                <Signup setShowSignup={setShowSignup} />
+                <Signup setShowSignup={setShowSignup} setShowLogin={setShowLogin}/>
             </Modal>
             
             <div className='navbar-wrapper'>
@@ -33,8 +33,8 @@ export const  Navbar = ()=>{
                 <div className='nav-links'>
                        <Link to="/" className='nav-link'>Home</Link>
                        <Link to="/about-us"  className='nav-link'>About Us</Link>
-                       <Link to="/"  className='nav-link'>Contact Us</Link>
-                       <Link to="/"  className='nav-link'>Courses</Link>
+                       <Link to="/contact-us"  className='nav-link'>Contact Us</Link>
+                       <Link to="/course-card"  className='nav-link'>Courses</Link>
                 </div>
                 <div className='navbar-auth'>
                     <button className='login-button' onClick={()=>setShowLogin(true)}> Login</button>
