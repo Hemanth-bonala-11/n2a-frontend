@@ -10,11 +10,15 @@ import { Router, Routes, Route } from 'react-router';
 import Home from './v1/Pages/Home';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Provider } from 'react-redux';
+
 
 import configureStore from './v1/Redux/store';
 
+export const { store } = configureStore();
 function App() {
   return (
+    <Provider store={store}>
     <div className="App">
       <Navbar/>
       <Routes>
@@ -25,6 +29,7 @@ function App() {
       <ToastContainer/>
      
     </div>
+    </Provider>
   );
 }
 

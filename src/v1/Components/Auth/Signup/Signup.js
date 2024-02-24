@@ -4,12 +4,19 @@ import { useState } from 'react'
 import { register, sendOTP } from '../../../Api/authApi'
 import { toast } from 'react-toastify'
 import { Otp } from '../Otp/Otp'
-import Loading from '../../Loading'
+import Loading from '../../Loading';
+import { useDispatch, useSelector } from 'react-redux';
+import { actionsCreator } from '../../../Redux/actions/actionsCreator'
+const mapStatetoProps = ({auth})=>({auth})
+
 export const Signup = ({setShowSignup})=>{
     const [formData, setFormData] = useState({});
     const [otp, setOtp] = useState(null);
     const [showOtp, setShowOtp] = useState(false);
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+    const {auth} = useSelector(mapStatetoProps);
+    const dispatch = useDispatch();
+
     const changeHandler = (e)=>{
         const key = e.target.name
         const value = e.target.value

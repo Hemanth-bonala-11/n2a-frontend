@@ -20,6 +20,8 @@ const initialState = {
                  payload
             }
         }
+        default:
+            return state
     }
 
  }
