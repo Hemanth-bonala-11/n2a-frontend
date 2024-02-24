@@ -12,3 +12,10 @@ export const register = (data)=>{
     const params = {}
     return requestMaker(url, "post", {params, payload})
 }
+
+export const login = (data)=>{
+    const url = `user/login`
+    const payload = data;
+    const params = {}
+    return requestMaker(url, "post", {params, payload})
+}

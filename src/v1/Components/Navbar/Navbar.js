@@ -14,7 +14,7 @@ export const  Navbar = ()=>{
     return (
         <div>
             <Modal show={showLogin}>
-                <Login/>
+                <Login setShowLogin={setShowLogin}/>
             </Modal>
             <Modal show={showSignup}>
                 <Signup setShowSignup={setShowSignup} />

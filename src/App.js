@@ -8,7 +8,8 @@ import {Footer} from './v1/Components/Footer/Footer';
 import { AboutUs } from './v1/Pages/AboutUs/AboutUs';
 import { Router, Routes, Route } from 'react-router';
 import Home from './v1/Pages/Home';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,8 @@ function App() {
         <Route path="/about-us" element={<AboutUs/>}/>
       </Routes>
       <Footer/>
+      <ToastContainer/>
+     
     </div>
   );
 }

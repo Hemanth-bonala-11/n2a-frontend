@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     z-index: 15333;
     background: rgba(0, 0, 0, 0.6);
@@ -20,7 +20,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    max-height: 90vh;
+    min-height: 40vh;
     padding: 1rem;
     border-radius: 0.8rem;
     min-width: 70vw;

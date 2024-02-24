@@ -1,7 +1,64 @@
-export const Login = ()=>{
+
+import signupFormImage from '../../../../Assets/images/Group.png'
+import { useState } from 'react'
+import { login, register, sendOTP } from '../../../Api/authApi'
+import { toast } from 'react-toastify'
+import { Otp } from '../Otp/Otp'
+import Loading from '../../Loading'
+import './Login.scss'
+
+export const Login = ({setShowLogin})=>{
+    const [formData, setFormData] = useState({});
+    const [loading, setLoading] = useState(false)
+    const changeHandler = (e)=>{
+        const key = e.target.name
+        const value = e.target.value
+        setFormData((prev)=>({...prev,[key]: value }))
+    }
+    const submitHandler = async ()=>{
+        setLoading(true);
+        try{
+        const response = await login(formData);
+        toast.success("logged in successfully");
+        setLoading(false);
+        setShowLogin(false)
+        }catch(err){
+            console.log(err.message);
+            toast.error(err.response.data.message)
+        }
+        setLoading(false);
+    }
     return (
         <div>
-            
+            {loading ? (<Loading/>):
+            <div className="login-wrapper">
+            <div className="signup-wrapper">
+                <div className="singup-image">
+                <img src={signupFormImage}/>
+                </div>
+                <div className="signup-form login-form">
+                    <div className='login-form-heading'>
+                        Login
+                    </div>
+                    <div className='email'>
+                    <input type='email' name="email" onChange={changeHandler} className='singup-input' placeholder='Enter Email'/>
+                    </div>
+                    <div className='password'>
+                    <input type='password' name="password" onChange={changeHandler} className='singup-input' placeholder='Enter Password'/>
+                    </div>
+                    <div className='buttons'>
+                        <div className='go-back'>
+                            <button className='go-back-button' onClick={()=>{setShowLogin(false)}}>Go Back</button>
+                        </div>
+                        <div className='signup'>
+                            <button className='singup-submit-button' onClick={submitHandler}>Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+     }
         </div>
     )
 }

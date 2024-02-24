@@ -59,7 +59,9 @@ order: 0;
 flex-grow: 0;
 color: white;
 }
-
+.signup-button:hover{
+    cursor: pointer;
+}
 .login-button{
     /* Sign in */
 font-family: 'Inter';

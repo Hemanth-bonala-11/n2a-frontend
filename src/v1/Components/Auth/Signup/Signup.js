@@ -4,10 +4,12 @@ import { useState } from 'react'
 import { register, sendOTP } from '../../../Api/authApi'
 import { toast } from 'react-toastify'
 import { Otp } from '../Otp/Otp'
+import Loading from '../../Loading'
 export const Signup = ({setShowSignup})=>{
     const [formData, setFormData] = useState({});
     const [otp, setOtp] = useState(null);
-    const [showOtp, setShowOtp] = useState(false)
+    const [showOtp, setShowOtp] = useState(false);
+    const [loading, setLoading] = useState(false)
     const changeHandler = (e)=>{
         const key = e.target.name
         const value = e.target.value
@@ -15,21 +17,25 @@ export const Signup = ({setShowSignup})=>{
     }
     console.log(formData,"formdata");
     const submitHandler = async ()=>{
+        setLoading(true);
         if(formData["password"]!==formData["confirm_password"]){
-            toast.error("password and confirm password are not matching")
+            toast.error("password and confirm password are not matching");
+            setLoading(false)
             return 
         }
         try{
         const response = await sendOTP(formData);
-        toast.success("otp sent successfully")
+        toast.success("otp sent successfully");
         setShowOtp(true)
         }catch(err){
             console.log(err.message);
-            toast.error("something went wrong while sending otp")
+            toast.error(err.response.data.message)
         }
+        setLoading(false)
     }
     const registerHandler = async ()=>{
         try{
+            setLoading(true)
         if(otp.length !== 6){
             toast.error("enter valid otp")
             return
@@ -38,21 +44,28 @@ export const Signup = ({setShowSignup})=>{
         const response = await register(formData);
         toast.success("user registered successfully");
         setShowOtp(false);
+        setShowSignup(false);
+        setLoading(false)
     }catch(err){
-        console.log(err.message);
+        toast.error(err.response.data.message)
     }
 
 
     }
 
     return (
-        !showOtp?
+        !showOtp? (
+            loading ? 
+            (<Loading/>):
         <div>
             <div className="signup-wrapper">
                 <div className="singup-image">
                 <img src={signupFormImage}/>
                 </div>
                 <div className="signup-form">
+                    <div className='signup-form-heading'>
+                        Signup
+                    </div>
                     <div className='singup-form-name'>
                     <div className='first-name'>
                         <input type='text' name="firstName" onChange={changeHandler} className='name' placeholder='Enter First Name'/>
@@ -85,9 +98,12 @@ export const Signup = ({setShowSignup})=>{
                 </div>
             </div>
         </div>
+        )
         :(
             <div>
-            <Otp otp={otp} setOtp={setOtp} showOtp={showOtp} setShowOtp={setShowOtp} registerHandler={registerHandler}/>
+            <Otp otp={otp} setOtp={setOtp} showOtp={showOtp} setShowOtp={setShowOtp}
+            setShowSignup={setShowSignup}
+            registerHandler={registerHandler}/>
             </div>
         )
     )
