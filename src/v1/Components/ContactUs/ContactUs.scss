@@ -1,16 +1,18 @@
 
 .main
 {
-    background-color: #131417;
+    background-color: rgb(251, 254, 253);
     display: flex;
     flex-direction: row;
     width: 100vw;
+    gap: 20px;
 }
 .form3
 {
-    width: 40%;
-    color: rgb(252, 250, 247);
+    width: 30%;
+    color: black;
     font-family: 'Times New Roman', Times, serif;
+    margin-left: 8%;
     
 }
 .feedbackform
@@ -63,7 +65,11 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 40%;
+    margin-left: 8%;
+    
+
+   
 }
 #option{
     font-size: 14px;
