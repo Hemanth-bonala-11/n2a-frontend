@@ -117,20 +117,28 @@ border-style: groove;
     .menu-list {
       position: absolute;
       background: white;
-      border-radius: 10px;
-      box-shadow: 0px 0px 7px #e0e0e0;
+      border-radius: 5px;
+      box-shadow: 0px 0px 7px #a29f9f;
       max-width: 150px;
       min-width: 100px;
       margin-top: 1em;
     //   display: none;
       animation: slide 0.2s linear forwards;
       .menu-item {
-        padding-top: 15px;
-        padding-bottom: 2px;
-        font-size: 0.9em;
+        padding-top: 12px;
+        padding-bottom: 10px;
+        padding-left: 8px;
+        font-size: 1em;
         text-decoration: none;
         cursor: pointer;
         color: black;
+        width: 130px;
+        height: 40px;
+        margin-top: 5px;
+        
+      }
+      .menu-item:hover{
+        background-color: #f1f1f1;
       }
       
     }
@@ -145,4 +153,8 @@ border-style: groove;
   .navbar-items{
     display: flex;
     gap: 15%;
+  }
+  .menu-link{
+    text-decoration: none;
+
   }
