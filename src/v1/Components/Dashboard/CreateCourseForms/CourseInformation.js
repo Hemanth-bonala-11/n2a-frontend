@@ -24,6 +24,7 @@ const CourseInformation = (props)=>{
     };
     const submitHandler = async (e)=>{
         e.preventDefault()
+        props.setLoading(true)
         // props.setLoading(true)
         try {
             if(!formData["courseName"] || !formData["courseDescription"] || !formData["whatYouWillLearn"] || !formData["price"] || !formData["thumbnail"]){
@@ -36,30 +37,32 @@ const CourseInformation = (props)=>{
                 form_data.append(key, formData[key]);
             }
             form_data.append('access_token', localStorage.getItem('auth_token'))
-            form_data.append("category", categories[0]._id)
             
             const res = await CreateCourse(form_data)
             toast.success("created course successfully")
-            // props.setLoading(false)
-            // props.setPage((prev)=>prev+1) 
+          
+            props.setPage((prev)=>prev+1) 
             
         } catch (error) {
             toast.error("error while creating course");
         }
+        props.setLoading(false)
 
 
         // props.setLoading(false)
         
     }
     console.log(formData,"form data");
-    const [categories, setCategories] = useState("")
+    const [categories, setCategories] = useState([])
     
     useEffect(()=>{
+        props.setLoading(true)
         fetchCategories().then((res)=>{
             setCategories(res.data.data)
         }).catch((err)=>{
             toast.error("error while fetching categories")
         })
+        props.setLoading(false)
     },[])
     console.log(categories,"categories");
 
@@ -94,6 +97,22 @@ const CourseInformation = (props)=>{
                     <input type="number" name="price"  id="course-information-title" className="course-information-text-input"
                     onChange={changeHandler}
                     />
+                    </div>
+                    <div className="course-information-div">
+                        <select className="course-information-dropdown" name="category" onChange={changeHandler}>
+                        <option >
+                                    select a category
+                                </option>
+                            {
+                                
+                            categories?.map((category)=>(
+                                <option className="course-information-option" value={category._id}>
+                                    {category.name}
+                                </option>
+                            ))
+                            }
+                        </select>
+
                     </div>
 
                   
