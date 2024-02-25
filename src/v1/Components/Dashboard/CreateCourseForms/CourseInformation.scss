@@ -1,0 +1,43 @@
+.course-information-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+    gap: 4vh;
+}
+.course-information-text-input{
+    width: 30vw;
+    height: 5vh;
+    border-radius: 5px;
+    padding: 3px;
+}
+.course-information-div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.course-information-textarea-input{
+    height: 10vh;
+    border-radius: 10px;
+    padding: 10px;
+}
+.course-information-label{
+    padding-left: 1%;
+    margin-bottom: 1%;
+}
+.course-information-next-button-wrapper{
+    display: flex;
+    justify-content: flex-end;
+}
+.course-information-next-button{
+    background-color: #4cc29e;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 4rem;
+}
+.course-information-next-button:hover{
+    cursor: pointer;
+}

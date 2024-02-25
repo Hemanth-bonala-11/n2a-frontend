@@ -2,7 +2,6 @@
 
 .sidebar {
     height: 100%;
-
     background-color: #e3f8f1;
     padding-top: 20px;
     display: flex;
@@ -13,8 +12,10 @@
     z-index: 1;
     width: 20vw;
     height: 100vh;
-    
-    
+}
+.sidebar-header{
+    height: 7vh;
+    border-radius: 10px;
 }
 
 .sidebar a {

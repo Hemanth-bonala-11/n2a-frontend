@@ -17,6 +17,9 @@ import configureStore from './v1/Redux/store';
 import ContactUs from './v1/Components/ContactUs';
 import CourseCard from './v1/Components/CourseCard';
 import Sidebar from './v1/Components/Sidebar';
+import { TeacherDashboard } from './v1/Pages/TeacherDashboard/TeacherDashboard';
+import { Profile } from './v1/Components/Profile/Profile';
+import { CreateCourse } from './v1/Components/Dashboard/CreateCourse/CreateCourse';
 
 export const { store } = configureStore();
 function App() {
@@ -29,8 +32,13 @@ function App() {
         <Route path="/about-us" element={<AboutUs/>}/>
         <Route path='/contact-us' element={<ContactUs/>}/>
         <Route path='/course-card' element={<Sidebar/>}/>
+        <Route path='/teacher' element={<TeacherDashboard/>}>
+          <Route path='profile' element={<Profile/>}/>
+          <Route path='create-course' element={<CreateCourse/>}/>
+        </Route>
+        
       </Routes>
-      <Footer/>
+     
       <ToastContainer/>
      
     </div>
