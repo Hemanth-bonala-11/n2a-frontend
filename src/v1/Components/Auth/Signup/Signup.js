@@ -71,7 +71,7 @@ export const Signup = ({setShowSignup, setShowLogin})=>{
                 </div>
                 <div className="signup-form">
                     <div className='signup-form-heading'>
-                        Signup
+                        Sign Up
                     </div>
                     <div className='singup-form-name'>
                     <div className='first-name'>
@@ -99,7 +99,7 @@ export const Signup = ({setShowSignup, setShowLogin})=>{
                             <button className='go-back-button' onClick={()=>{setShowSignup(false)}}>Go Back</button>
                         </div>
                         <div className='signup'>
-                            <button className='singup-submit-button' onClick={submitHandler}>Signup</button>
+                            <button className='singup-submit-button' onClick={submitHandler}>Sign Up</button>
                         </div>
                     </div>
                 </div>

@@ -55,14 +55,14 @@ export const VideoUploadModal = (props)=>{
                 </div>
             
             <div className='video-uploader-submit-button'>
-                    <button onClick={uploadHandler}>Upload</button>
+                    <button  className='video-uploader-submit-button-upload' onClick={uploadHandler}>Upload</button>
             </div>
 
             </div>
                     )
                 })
             }
-            <button onClick={toggleUploadModal}>close</button>
+            <button  className='video-uploader-submit-button-close' onClick={toggleUploadModal}>close</button>
         </div>
     )
 }
