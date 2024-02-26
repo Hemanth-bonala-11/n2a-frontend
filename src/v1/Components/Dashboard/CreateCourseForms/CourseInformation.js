@@ -106,7 +106,7 @@ const CourseInformation = (props)=>{
                     />
                     </div>
                     <div className="course-information-next-button-wrapper">
-                        <button className="course-information-next-button">next</button>
+                        <button className="course-information-next-button">Next <span class="arrow-icon">&#9654;</span></button>
                     </div>
 
                 </form>

@@ -67,7 +67,7 @@ export const  Navbar = ()=>{
                 ) :(
                 <div className='navbar-auth'>
                     <button className='login-button' onClick={()=>setShowLogin(true)}> Login</button>
-                    <button className='signup-button' onClick={()=>setShowSignup(true)}>Sign up</button>
+                    <button className='signup-button' onClick={()=>setShowSignup(true)}>Sign Up</button>
                 </div>
                 )
                 }
