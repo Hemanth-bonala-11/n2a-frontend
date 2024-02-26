@@ -21,6 +21,7 @@ import { TeacherDashboard } from './v1/Pages/TeacherDashboard/TeacherDashboard';
 import { Profile } from './v1/Components/Profile/Profile';
 import { CreateCourse } from './v1/Components/Dashboard/CreateCourse/CreateCourse';
 import { ContactUsPage } from './v1/Pages/ContactUsPAge/ContactUsPage';
+import UserProfile from './v1/Components/UserProfile/UserProfile';
 
 export const { store } = configureStore();
 function App() {
@@ -35,7 +36,7 @@ function App() {
         <Route path='/contact-us' element={<ContactUsPage/>}/>
         <Route path='/course-card' element={<Sidebar/>}/>
         <Route path='/teacher' element={<TeacherDashboard/>}>
-          <Route path='profile' element={<Profile/>}/>
+          <Route path='profile' element={<UserProfile/>}/>
           <Route path='create-course' element={<CreateCourse/>}/>
         </Route>
         

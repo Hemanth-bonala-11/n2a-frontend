@@ -8,6 +8,7 @@ import {FiEdit} from 'react-icons/fi';
 import {HiOutlineLogout} from 'react-icons/hi';
 import {FaBook} from 'react-icons/fa';
 import logo from '../../../Assets/images/logo.png'
+import { toast } from "react-toastify";
 
 
 
@@ -27,11 +28,13 @@ function Sidebar() {
     sidebar.classList.toggle("sidebar-active");
    
   }
+  const logout = ()=>{
+    localStorage.removeItem('auth_token')
+    navigate('/')
+    window.location.reload()
+    toast.success("logged out successfully")
+  }
   
-
-
-
-
 
   return (
    
@@ -45,7 +48,7 @@ function Sidebar() {
             <li className="options-parent"><NavLink to="/courses"><div className="options"><div><AiOutlinePlus/></div> <div>All Courses</div></div></NavLink></li>
            
             <li className="options-parent"><NavLink to="profile" ><div className="options"><div><CgProfile/> </div><div>User Profile</div></div></NavLink></li>
-            <li className="options-parent"><div className="options" id="logout"><div><HiOutlineLogout/></div> <div>Log Out</div></div></li>
+            <li className="options-parent"><div className="options" id="logout" onClick={logout}><div><HiOutlineLogout/></div> <div>Log Out</div></div></li>
            
         </ul>
     </div>
