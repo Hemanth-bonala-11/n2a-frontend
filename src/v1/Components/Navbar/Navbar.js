@@ -2,13 +2,14 @@
 import { Link } from 'react-router-dom'
 import './Navbar.scss'
 import logo from '../../../Assets/images/logo.png'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Modal from '../Modal';
 import Login from '../Auth/Login';
 import Signup from '../Auth/Signup';
 import { Auth } from '../Auth/Auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { actionsCreator } from '../../Redux/actions/actionsCreator';
+import { fetchUserDetails } from '../../Api/authApi';
 
 const mapStatetoProps = ({auth})=>({auth})
 
@@ -19,6 +20,27 @@ export const  Navbar = ()=>{
     const isLoggedIn = localStorage.getItem("auth_token")
     const [openProfile, setOpenProfile] = useState(false);
     const dispatch = useDispatch()
+    const setUserDetails = async ()=>{
+      try {
+        const token = localStorage.getItem('auth_token')
+      const res = await fetchUserDetails({"access_token": token})
+      dispatch(actionsCreator.SET_USER_DETAILS(res.data.user_details)) 
+      dispatch(actionsCreator.SET_LOGIN({isLoggedIn: true}))
+        
+      } catch (error) {
+        
+      }
+      
+    }
+    useEffect(()=>{
+      try {
+        setUserDetails()
+      } catch (error) {
+        
+      }
+      
+     
+    },[])
     
     return (
         <div>
@@ -52,8 +74,8 @@ export const  Navbar = ()=>{
                   className="navbar-items"
                   onClick={() => setOpenProfile(!openProfile)}
                 >
-                  <img src={auth.userDetails.profilePicture} alt="" className='profile-pic' />
-                  <p className="navbar-login">Hey, {auth.userDetails.firstName}!</p>
+                  <img src={auth?.userDetails?.profilePicture} alt="" className='profile-pic' />
+                  <p className="navbar-login">Hey, {auth?.userDetails?.firstName}!</p>
                 </div>
                     {
                         openProfile &&
