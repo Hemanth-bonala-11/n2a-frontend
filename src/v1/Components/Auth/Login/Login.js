@@ -9,6 +9,8 @@ import './Login.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { actionsCreator } from '../../../Redux/actions/actionsCreator'
 import { SET_USER_DETAILS, SET_LOGIN } from '../../../Redux/actions/actionTypes'
+import Modal from '../../Modal'
+import ForgotPassword from '../../ForgotPassword/ForgotPassword'
 
 
 const mapStatetoProps = ({auth})=>({auth})
@@ -24,6 +26,8 @@ export const Login = ({setShowLogin})=>{
         const value = e.target.value
         setFormData((prev)=>({...prev,[key]: value }))
     }
+    const [showForgotPassword, setShowForgotPassword] = useState(false)
+
     const submitHandler = async ()=>{
         setLoading(true);
         try{
@@ -43,8 +47,15 @@ export const Login = ({setShowLogin})=>{
         }
         setLoading(false);
     }
+    const toggleForgotPassword = ()=>{
+        
+        setShowForgotPassword((prev)=>!prev)
+      
+    }
     return (
+        showForgotPassword? (<ForgotPassword toggleForgotPassword={toggleForgotPassword} />):
         <div>
+            
             {loading ? (<Loading/>):
             <div className="login-wrapper">
             <div className="signup-wrapper">
@@ -60,6 +71,10 @@ export const Login = ({setShowLogin})=>{
                     </div>
                     <div className='password'>
                     <input type='password' name="password" onChange={changeHandler} className='singup-input' placeholder='Enter Password'/>
+                    </div>
+                    <div className='forgot-password-option' onClick={toggleForgotPassword}>
+                        forgot password ?
+
                     </div>
                     <div className='buttons'>
                         <div className='go-back'>

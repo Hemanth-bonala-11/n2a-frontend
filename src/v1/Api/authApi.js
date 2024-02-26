@@ -27,3 +27,17 @@ export const fetchUserDetails = (data)=>{
     const params = {}
     return requestMaker(url, "post", {params, payload})
 }
+
+export const sendForgotPasswordOtp = (data)=>{
+    const url = `user/forgot-password`
+    const payload = {...data};
+    const params = {}
+    return requestMaker(url, "post", {params, payload})
+
+}
+export const changePassword =(data)=>{
+    const url = `user/changepassword`
+    const payload = {...data};
+    const params = {}
+    return requestMaker(url, "post", {params, payload})
+}

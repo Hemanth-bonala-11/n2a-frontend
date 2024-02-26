@@ -20,17 +20,19 @@ import Sidebar from './v1/Components/Sidebar';
 import { TeacherDashboard } from './v1/Pages/TeacherDashboard/TeacherDashboard';
 import { Profile } from './v1/Components/Profile/Profile';
 import { CreateCourse } from './v1/Components/Dashboard/CreateCourse/CreateCourse';
+import { ContactUsPage } from './v1/Pages/ContactUsPAge/ContactUsPage';
 
 export const { store } = configureStore();
 function App() {
   return (
     <Provider store={store}>
     <div className="App">
-      {/* <Navbar/> */}
+      
       <Routes>
+     
         <Route path="/" element={<Home/>}/>
         <Route path="/about-us" element={<AboutUs/>}/>
-        <Route path='/contact-us' element={<ContactUs/>}/>
+        <Route path='/contact-us' element={<ContactUsPage/>}/>
         <Route path='/course-card' element={<Sidebar/>}/>
         <Route path='/teacher' element={<TeacherDashboard/>}>
           <Route path='profile' element={<Profile/>}/>

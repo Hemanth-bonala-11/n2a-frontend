@@ -3,6 +3,8 @@ import { AboutusBanner } from "../../Components/AboutusBanner/AboutusBanner";
 import image1 from '../../../Assets/images/about-us-banner-image-1.png';
 import image2 from '../../../Assets/images/about-us-banner-image-2.png';
 import { useSelector } from "react-redux";
+import Navbar from "../../Components/Navbar";
+import { Footer } from "../../Components/Footer/Footer";
 const mapStatetoProps = ({auth}) => ({auth})
 
 export const AboutUs = ()=>{
@@ -26,8 +28,10 @@ export const AboutUs = ()=>{
     },[])
     return (
         <div className="aboutus-wrapper">
+            <Navbar/>
             <AboutusBanner heading={aboutUsData[0]?.heading} description={aboutUsData[0]?.description} imageUrl={aboutUsData[0]?.imageUrl} side="left"/>
             <AboutusBanner heading={aboutUsData[1]?.heading} description={aboutUsData[1]?.description} imageUrl={aboutUsData[1]?.imageUrl} side="right"/>
+            <Footer/>
         </div>
     )
 }

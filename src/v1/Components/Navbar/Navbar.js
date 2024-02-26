@@ -10,6 +10,7 @@ import { Auth } from '../Auth/Auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { actionsCreator } from '../../Redux/actions/actionsCreator';
 import { fetchUserDetails } from '../../Api/authApi';
+import { toast } from 'react-toastify';
 
 const mapStatetoProps = ({auth})=>({auth})
 
@@ -20,6 +21,11 @@ export const  Navbar = ()=>{
     const isLoggedIn = localStorage.getItem("auth_token")
     const [openProfile, setOpenProfile] = useState(false);
     const dispatch = useDispatch()
+    const logout = ()=>{
+      localStorage.removeItem('auth_token')
+      window.location.reload()
+      toast.success("logged out successfully")
+    }
     const setUserDetails = async ()=>{
       try {
         const token = localStorage.getItem('auth_token')
@@ -83,7 +89,7 @@ export const  Navbar = ()=>{
                     <Link to="/myorders" onClick={() => setOpenProfile(false)}  className='menu-link'>
                       <div className="menu-item">Dashboard</div>
                     </Link>
-                      <div className="menu-item">
+                      <div className="menu-item" onClick={logout}>
                         Logout
                       </div>
                   </div>

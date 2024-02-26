@@ -9,3 +9,11 @@
     font-size: 25px;
     font-weight: bold;
 }
+.forgot-password-option{
+    color: blue;
+    display: flex;
+    justify-content: center;
+}
+.forgot-password-option:hover{
+    cursor: pointer;
+}
