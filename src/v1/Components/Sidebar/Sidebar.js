@@ -8,14 +8,10 @@ import {FiEdit} from 'react-icons/fi';
 import {HiOutlineLogout} from 'react-icons/hi';
 import {FaBook} from 'react-icons/fa';
 import logo from '../../../Assets/images/logo.png'
-<<<<<<< HEAD
-import { toast } from "react-toastify";
-=======
 import { MdFormatListBulletedAdd } from "react-icons/md";
 import { FaBookOpen } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import { AiOutlineLogout } from "react-icons/ai";
->>>>>>> 301c46c06cee3dd26921ec79da2cadd3627064f9
 
 
 
