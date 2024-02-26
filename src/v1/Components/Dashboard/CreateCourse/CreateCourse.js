@@ -7,6 +7,7 @@ import { CourseVideosUpload } from '../CreateCourseForms/CourseVideosUpload';
 export const CreateCourse = ()=>{
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false)
+    const [course, setCourse] = useState();
     useEffect(()=>{
 
     },[])
@@ -20,10 +21,10 @@ export const CreateCourse = ()=>{
             <div className='create-course-heading'>Create Course</div>
             <div className="create-course-wrapper">
             {
-                page === 1 && <CourseInformation setLoading={setLoading} setPage={setPage}/>
+                page === 2 && <CourseInformation setLoading={setLoading} setPage={setPage} setCourse={setCourse}/>
             }
             {
-                page === 2 && <CourseVideosUpload/>
+                page === 1 && <CourseVideosUpload course={course}/>
             }
             
             </div>

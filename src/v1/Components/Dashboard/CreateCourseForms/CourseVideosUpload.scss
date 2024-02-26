@@ -1,0 +1,39 @@
+.chapter-create-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+}
+.add-button-img{
+    height: 3vh;
+    width: 2vw;
+}
+.chapter-create-input-wrapper{
+    display: flex;
+    gap: 1vw;
+}
+.chapter-create-input{
+    display: flex;
+    gap: 1vw;
+   
+}
+.chapter-create-section-name{
+    height: 5vh;
+    width: 15vw;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+.chapter-create-create-button{
+    width: 5vw;
+    border-radius: 5px;
+}
+.add-button{
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+}
+.add-button:hover{
+    cursor: pointer;
+}
+.chapter-create-create-button:hover{
+    cursor: pointer;
+}

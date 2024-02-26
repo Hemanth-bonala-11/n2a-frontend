@@ -17,3 +17,10 @@ export const fetchCategories = ()=>{
     return requestMaker(url, "get", {payload,params})
 
 }
+
+export const createChapter = (data)=>{
+    const url = `course/addSection`
+    const payload = {...data}
+    const params = {}
+    return requestMaker(url, "post", {payload,params})
+}

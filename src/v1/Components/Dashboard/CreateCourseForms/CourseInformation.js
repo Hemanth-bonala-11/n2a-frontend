@@ -40,6 +40,7 @@ const CourseInformation = (props)=>{
             
             const res = await CreateCourse(form_data)
             toast.success("created course successfully")
+            props.setCourse(res.data.data)
           
             props.setPage((prev)=>prev+1) 
             
