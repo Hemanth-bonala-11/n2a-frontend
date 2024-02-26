@@ -84,11 +84,11 @@ function Sidebar() {
                auth.userDetails?.accountType === "Instructor" &&
                <>
               
-            <li className="options-parent"><NavLink to="create-course"><div className="options"><div><MdFormatListBulletedAdd /> </div><div>Add Courses</div></div></NavLink></li>
-            <li className="options-parent"><NavLink to="courses"><div className="options"><div><FaBookOpen /></div> <div>Your Courses</div></div></NavLink></li>
+              <NavLink to="create-course" className="sidebar-links"><li className="options-parent"><div className="options"><div><MdFormatListBulletedAdd /> </div><div>Add Courses</div></div></li></NavLink>
+            <NavLink to="courses" className="sidebar-links"><li className="options-parent"><div className="options"><div><FaBookOpen /></div> <div>Your Courses</div></div></li></NavLink>
            
-            <li className="options-parent"><NavLink to="profile" ><div className="options"><div><FaUserCircle /> </div><div>User Profile</div></div></NavLink></li>
-            <li className="options-parent"><div className="options" id="logout" onClick={logout}><div><AiOutlineLogout /></div> <div>Log Out</div></div></li>
+            <NavLink to="profile" className="sidebar-links" ><li className="options-parent"><div className="options"><div><FaUserCircle /> </div><div>User Profile</div></div></li></NavLink>
+            <Link className="sidebar-links"><li className="options-parent"><div className="options" id="logout" onClick={logout}><div><AiOutlineLogout /></div> <div>Log Out</div></div></li></Link>
             </>
             }
            

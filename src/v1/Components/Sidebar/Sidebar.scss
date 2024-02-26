@@ -110,18 +110,25 @@ sub {
     max-height: 12vh;
     text-decoration: none;
     display: flex;
-    width: 305px;
-    height: 100px;
+    width: 270px;
+    height: 70px;
    
     align-content: center;
     padding: 10px;
 
 }
-.options-parent:hover{
-
+.sidebar-links{
+    border-radius: 10px;
+}
+.active{
     cursor: pointer;
     background-color: #36cf9f;
-   
+
+
+}
+.sidebar-links:hover{
+    cursor: pointer;
+    background-color: #36cf9f;
 
 
 }

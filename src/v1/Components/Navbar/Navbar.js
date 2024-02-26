@@ -86,7 +86,7 @@ export const  Navbar = ()=>{
                     {
                         openProfile &&
                     <div className="menu-list">
-                    <Link to="/myorders" onClick={() => setOpenProfile(false)}  className='menu-link'>
+                    <Link to="/dashboard/profile" onClick={() => setOpenProfile(false)}  className='menu-link'>
                       <div className="menu-item">Dashboard</div>
                     </Link>
                       <div className="menu-item" onClick={logout}>

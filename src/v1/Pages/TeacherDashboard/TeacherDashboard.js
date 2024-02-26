@@ -3,7 +3,7 @@ import Sidebar from '../../Components/Sidebar'
 import './TeacherDashboard.scss'
 import { Profile } from '../../Components/Profile/Profile'
 
-export const TeacherDashboard = ()=>{
+export const UserDashboard = ()=>{
     return (
         <div>
             <div className="teacher-dashboard-wrapper">

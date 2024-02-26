@@ -17,7 +17,7 @@ import configureStore from './v1/Redux/store';
 import ContactUs from './v1/Components/ContactUs';
 import CourseCard from './v1/Components/CourseCard';
 import Sidebar from './v1/Components/Sidebar';
-import { TeacherDashboard } from './v1/Pages/TeacherDashboard/TeacherDashboard';
+import { UserDashboard } from './v1/Pages/TeacherDashboard/TeacherDashboard.js';
 import { Profile } from './v1/Components/Profile/Profile';
 import { CreateCourse } from './v1/Components/Dashboard/CreateCourse/CreateCourse';
 import { ContactUsPage } from './v1/Pages/ContactUsPAge/ContactUsPage';
@@ -42,10 +42,11 @@ function App() {
         <Route path="/about-us" element={<AboutUs/>}/>
         <Route path='/contact-us' element={<ContactUsPage/>}/>
         <Route path='/course-card' element={<Sidebar/>}/>
-        <Route path='/teacher' element={<TeacherDashboard/>}>
+        <Route path='/dashboard' element={<UserDashboard/>}>
           <Route path='profile' element={<UserProfile/>}/>
           <Route path='create-course' element={<CreateCourse/>}/>
           <Route path='courses' element={<YourCourses/>}/>
+         
         </Route>
         
       </Routes>

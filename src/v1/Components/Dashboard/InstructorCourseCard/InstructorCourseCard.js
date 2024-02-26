@@ -10,9 +10,9 @@ export const InstructorCourseCard = ({Course})=>{
                     <img src={Course?.thumbnail} className='instructor-course-thumbnail'/>
                 </div>
                 <div className='instructor-course-details-wrapper'>
-                    <div className='instructor-course-details-title'>
+                    <h3 className='instructor-course-details-title'>
                         {Course?.courseName}
-                    </div>
+                    </h3>
                     <div className='instructor-course-details-description'>
                         {Course?.description}
                     </div>
