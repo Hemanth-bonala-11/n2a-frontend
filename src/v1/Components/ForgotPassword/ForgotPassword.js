@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import './ForgotPassword.scss'; // Import your CSS file
 import { changePassword, sendForgotPasswordOtp } from '../../Api/authApi';
 import { toast } from 'react-toastify';
+import Loading from '../Loading';
 
 function ForgotPassword(props) {
   const [email, setEmail] = useState('');
@@ -22,13 +23,10 @@ function ForgotPassword(props) {
   const passwordChange = (e)=>{
     setNewPassword(e.target.value)
   }
-  const otpHandler = ()=>{
-
-    
-  }
+  const [loading, setLoading] = useState(false)
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your logic for sending a password reset email here
+    props.setLoading(true)
     if(!showOtp){
         const forgotPasswordpayload = {
             "email": email,
@@ -56,6 +54,7 @@ function ForgotPassword(props) {
             })
 
         }
+        props.setLoading(false)
         
     
   };
@@ -104,6 +103,7 @@ function ForgotPassword(props) {
       </p>
     </div>
     </div>
+    
   );
 }
 

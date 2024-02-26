@@ -53,10 +53,10 @@ export const Login = ({setShowLogin})=>{
       
     }
     return (
-        showForgotPassword? (<ForgotPassword toggleForgotPassword={toggleForgotPassword} />):
+        
+        loading? (<Loading/>):
+        showForgotPassword? (<ForgotPassword toggleForgotPassword={toggleForgotPassword} setLoading={setLoading} />):
         <div>
-            
-            {loading ? (<Loading/>):
             <div className="login-wrapper">
             <div className="signup-wrapper">
                 <div className="singup-image">
@@ -88,7 +88,7 @@ export const Login = ({setShowLogin})=>{
             </div>
 
             </div>
-     }
+     
         </div>
     )
 }
