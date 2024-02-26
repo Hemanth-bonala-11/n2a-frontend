@@ -1,14 +1,14 @@
 import './CourseCard.scss'
 import image from '../../../Assets/images/banner-front-image.png'
 
-export const CourseCard = ()=>{
+export const CourseCard = ({Course})=>{
     return (
             <div id="card">
       <img src={image} alt="" id="cardimage" />
       <div id="cardcontent">
         <div style={{ fontWeight: 'lighter' }}>Design</div>
         <div id="coursename">
-          <div className='course-title'>Figma UI UX Design</div>
+          <div className='course-title'>{Course?.courseName}</div>
           <img src="spotifyBackground.jpg" alt="" />
         </div>
         <div className='course-description'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit, adipisci!</div>

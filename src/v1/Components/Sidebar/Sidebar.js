@@ -58,6 +58,18 @@ function Sidebar() {
     window.location.reload()
     toast.success("logged out successfully")
   }
+
+  if(auth.userDetails?.accountType === "Student" ){
+
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date(); Tawk_API.embedded='tawk_6545e247f2439e1631eb9fc6';
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6545e247f2439e1631eb9fc6/1hecfsfcm';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);})()
+  }
   
 
   return (
@@ -70,16 +82,16 @@ function Sidebar() {
             {
               auth.userDetails?.accountType === "Student" &&
               <>
-              <li className="options-parent"><NavLink to="create-course"><div className="options"><div><MdFormatListBulletedAdd /> </div><div>Enrolled Courses</div></div></NavLink></li>
-            <li className="options-parent"><NavLink to="/courses"><div className="options"><div><FaBookOpen /></div> <div>All Courses</div></div></NavLink></li>
+             <NavLink to="enrolled-courses"> <li className="options-parent"><div className="options"><div><MdFormatListBulletedAdd /> </div><div>Enrolled Courses</div></div></li></NavLink>
+             {/* <NavLink to="all-courses"><li className="options-parent"><div className="options"><div><FaBookOpen /></div> <div>All Courses</div></div></li></NavLink> */}
            
-            <li className="options-parent"><NavLink to="profile" ><div className="options"><div><FaUserCircle /> </div><div>User Profile</div></div></NavLink></li>
-            <li className="options-parent"><div className="options" id="logout" onClick={logout}><div><AiOutlineLogout /></div> <div>Log Out</div></div></li>
+             <NavLink to="profile" ><li className="options-parent"><div className="options"><div><FaUserCircle /> </div><div>User Profile</div></div></li></NavLink>
+             <li className="options-parent"><div className="options" id="logout" onClick={logout}><div><AiOutlineLogout /></div> <div>Log Out</div></div></li>
+             <div id='tawk_6545e247f2439e1631eb9fc6'></div>
               </>
            
           }
 
-            {/* //teacher */}
             {
                auth.userDetails?.accountType === "Instructor" &&
                <>

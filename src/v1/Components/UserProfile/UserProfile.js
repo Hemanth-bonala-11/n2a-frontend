@@ -23,7 +23,7 @@ const UserProfile = () => {
                         </div>}
                         <div className="PROFESSION">
                             <h3>Profession</h3>
-                            <h4 id="Profession">Student</h4>
+                            <h4 id="Profession">{auth.userDetails?.accountType}</h4>
                         </div>
                         <div className="ContactNumber">
                             <h3>ContactNumber</h3>

@@ -71,7 +71,7 @@ export const  Navbar = ()=>{
                        <Link to="/" className='nav-link'>Home</Link>
                        <Link to="/about-us"  className='nav-link'>About Us</Link>
                        <Link to="/contact-us"  className='nav-link'>Contact Us</Link>
-                       <Link to="/course-card"  className='nav-link'>Courses</Link>
+                       <Link to="/courses"  className='nav-link'>Courses</Link>
                 </div>
                 {
                 isLoggedIn?(

@@ -25,6 +25,7 @@ import UserProfile from './v1/Components/UserProfile/UserProfile';
 import { YourCourses } from './v1/Components/Dashboard/YourCourses/YourCourses.js';
 import { useEffect } from 'react';
 import logot from './Assets/images/logo.png'
+import { EnrolledCourses } from './v1/Components/Dashboard/EnrolledCourses/EnrolledCourses.js';
 
 export const { store } = configureStore();
 function App() {
@@ -46,7 +47,7 @@ function App() {
           <Route path='profile' element={<UserProfile/>}/>
           <Route path='create-course' element={<CreateCourse/>}/>
           <Route path='courses' element={<YourCourses/>}/>
-         
+         <Route path='enrolled-courses' element={<EnrolledCourses/>}/>
         </Route>
         
       </Routes>

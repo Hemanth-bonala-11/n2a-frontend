@@ -37,5 +37,21 @@ export const fetchInstructorCourses = (data) =>{
     const payload = data
     const params = {}
     return requestMaker(url, "post", {payload,params})
+}
+
+export const fetchEnrolledCourses = (data)=>{
+    const url = `course/getEnrolledCourses`
+    const payload = data
+    const params = {}
+    return requestMaker(url, "post", {payload,params})
+
+}
+
+
+export const fetchAllCourses = (data)=>{
+    const url = `course/getAllCourses`
+    const payload = {}
+    const params = {...data}
+    return requestMaker(url, "get", {payload,params})
 
 }
