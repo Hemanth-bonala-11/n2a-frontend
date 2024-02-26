@@ -1,5 +1,8 @@
 .your-courses-wrapper{
     display: flex;
+    flex-direction: column;
     width: 80%;
+    gap: 5vh;
+    margin-top: 7vh;
     
 }

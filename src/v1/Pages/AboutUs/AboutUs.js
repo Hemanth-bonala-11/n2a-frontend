@@ -16,12 +16,15 @@ export const AboutUs = ()=>{
         setAboutUsData([
             {
                 imageUrl: image1,
-                description: "Neophyte2Adept, is a UI/UX Design Academy in Delhi involved in User Experience and User Interface Training and Consulting. It was started in 2023 and passionate towards User Interface Design/ User Experience Design, Human Computer Interaction Design. Humanoid is gushing towards competence to acquire knowledge and have a wide understanding towards the sphere through the foremost courses in the area of UI/UX Design, by strengthening up your skills, for your golden future",
-                heading: "Neophyte2Adept providing the best opportunities to the students around the glob."
+                description:`Neophyte, a cutting-edge e-learning platform developed by the ingenious minds at NIT Jalandhar, stands as a beacon of innovation in the realm of education. With a steadfast commitment to enhancing the learning experience, Neophyte serves as a dynamic bridge between teachers and students, offering a plethora of meticulously curated courses to cater to diverse interests and academic pursuits
+
+                At Neophyte, we recognize that learning is not confined to the four walls of a classroom. With the ever-evolving landscape of education, our platform empowers learners to transcend traditional boundaries and embark on a journey of knowledge acquisition at their own pace and convenience.`,
+                
+                heading: "Welcome to Neophyte: Your Gateway to Learning Excellence"
             },
             {
                 imageUrl: image2,
-                description: "Neophyte2Adept, is a UI/UX Design Academy in Delhi involved in User Experience and User Interface Training and Consulting. It was started in 2023 and passionate towards User Interface Design/ User Experience Design, Human Computer Interaction Design. Humanoid is gushing towards competence to acquire knowledge and have a wide understanding towards the sphere through the foremost courses in the area of UI/UX Design, by strengthening up your skills, for your golden future",
+                description: "What sets Neophyte apart is its unwavering dedication to fostering meaningful interactions between educators and learners. Through engaging lectures, interactive assignments, and collaborative discussions, our platform cultivates a vibrant community of knowledge seekers united by a shared passion for learning.",
                 heading: "Neophyte2Adept  providing the best opportunities to the students around the glob."
             },
         ])

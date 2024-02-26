@@ -31,3 +31,11 @@ export const createsubSection = (data)=>{
         'Content-Type': 'multipart/form-data'
       })
 }
+
+export const fetchInstructorCourses = (data) =>{
+    const url = `course/getInstructorCourses`
+    const payload = data
+    const params = {}
+    return requestMaker(url, "post", {payload,params})
+
+}

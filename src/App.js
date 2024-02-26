@@ -22,9 +22,16 @@ import { Profile } from './v1/Components/Profile/Profile';
 import { CreateCourse } from './v1/Components/Dashboard/CreateCourse/CreateCourse';
 import { ContactUsPage } from './v1/Pages/ContactUsPAge/ContactUsPage';
 import UserProfile from './v1/Components/UserProfile/UserProfile';
+import { YourCourses } from './v1/Components/Dashboard/YourCourses/YourCourses.js';
+import { useEffect } from 'react';
+import logot from './Assets/images/logo.png'
 
 export const { store } = configureStore();
 function App() {
+  useEffect(()=>{
+    const fevicon = logo;
+    document.getElementById('favicon').setAttribute('href', fevicon);
+  },[])
   return (
     <Provider store={store}>
     <div className="App">
@@ -38,6 +45,7 @@ function App() {
         <Route path='/teacher' element={<TeacherDashboard/>}>
           <Route path='profile' element={<UserProfile/>}/>
           <Route path='create-course' element={<CreateCourse/>}/>
+          <Route path='courses' element={<YourCourses/>}/>
         </Route>
         
       </Routes>
