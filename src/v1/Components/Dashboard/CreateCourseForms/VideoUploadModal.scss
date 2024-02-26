@@ -1,0 +1,22 @@
+.video-uploader-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    align-items: center;
+    .video-uploader-input-wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    .video-uploader{
+        display: flex;
+        align-items: center;
+        gap: 10%;
+    }
+}
+.video-preview{
+    height: 10vh;
+}
+.video-name-display{
+    font-size: 14px;
+    margin-top: 2vh;
+}
