@@ -21,10 +21,10 @@ export const CreateCourse = ()=>{
             <div className='create-course-heading'>Create Course</div>
             <div className="create-course-wrapper">
             {
-                page === 2 && <CourseInformation setLoading={setLoading} setPage={setPage} setCourse={setCourse}/>
+                page === 1 && <CourseInformation setLoading={setLoading} setPage={setPage} setCourse={setCourse}/>
             }
             {
-                page === 1 && <CourseVideosUpload course={course}/>
+                page === 2 && <CourseVideosUpload course={course} setLoading={setLoading}/>
             }
             
             </div>

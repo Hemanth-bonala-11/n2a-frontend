@@ -12,6 +12,8 @@ export const CourseVideosUpload = (props)=>{
     const [sections, setSections] = useState([{name:'', }])
     const [name, setName] = useState("")
     const [showVideoUploadModal, setShowVideoUploadModal] = useState(false)
+    const [sectionID, setSectionId] = useState()
+    
     const changeHandler = (e, index)=>{
         sections[index]["name"] = e.target.value
     }
@@ -19,6 +21,7 @@ export const CourseVideosUpload = (props)=>{
         setSections((prev)=>([...prev, {name:""}]))
     }
     const createHandler =  (sectionName)=>{
+        props.setLoading(true)
         setShowVideoUploadModal(true)
         const payload = {
             "sectionName": sectionName,
@@ -27,19 +30,28 @@ export const CourseVideosUpload = (props)=>{
         } 
         createChapter(payload).then((res)=>{
             toast.success("created chapter successfully")
-            setSections((prev)=>([...prev, {name:""}]))
+            
+            setSections(sections.map(section => {
+                if (section.name === res.data.section.name) {
+                    return { ...section, id: res.data.section._id };
+                }
+                return section;
+            }))
+            setSectionId(res.data.section._id)
+            console.log(res.data.section._id,"Created section id");
             setShowVideoUploadModal(true)
+            setSections((prev)=>([...prev, {name:""}]))
         })
         .catch((err)=>{
             toast.error("error while creating chapter")
         })
+        props.setLoading(false)
 
     }
-
     return (
         <div>
             <Modal show={showVideoUploadModal}>
-                <VideoUploadModal/>
+                <VideoUploadModal setShowVideoUploadModal={setShowVideoUploadModal} setLoading={props.setLoading} sectionID={sectionID}/>
             </Modal>
             <div className="chapter-create-wrapper">
                 {
