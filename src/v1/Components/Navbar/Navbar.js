@@ -68,11 +68,11 @@ export const  Navbar = ()=>{
                 <div className='search-courses'>
                     <input type='text' className='search-query' placeholder='want to learn ? search courses'/>
                 </div>
-                <div className='nav-links'>
-                       <Link to="/" className='nav-link'>Home</Link>
-                       <Link to="/about-us"  className='nav-link'>About Us</Link>
-                       <Link to="/contact-us"  className='nav-link'>Contact Us</Link>
-                       <Link to="/courses"  className='nav-link'>Courses</Link>
+                <div className='navbar-links'>
+                       <Link to="/" className='navbar-link'>Home</Link>
+                       <Link to="/about-us"  className='navbar-link'>About Us</Link>
+                       <Link to="/contact-us"  className='navbar-link'>Contact Us</Link>
+                       <Link to="/courses"  className='navbar-link'>Courses</Link>
                 </div>
                 {
                 isLoggedIn?(

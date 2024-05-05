@@ -29,6 +29,13 @@ export const AllCourses = (props)=>{
     return (
         <div>
             <Navbar/>
+            <div className='allcourseshead'>
+                <pre>Neophyte2Adept Courses <br></br>
+                </pre>
+                <p>Interactive LIVE & Self-Paced Courses</p>
+
+            </div>
+
             <div className='all-category-courses-wrapper'>
             {
                 loading?<Loading/>:courses?.map((course)=>(
