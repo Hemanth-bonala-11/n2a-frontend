@@ -8,7 +8,7 @@ const getBaseUrl = () => {
   const isLocalEnv = domain ? domain.hostname === "localhost" : false;
   const origin = domain && !isLocalEnv ? domain.origin : "http://localhost:4000";
   return origin;
-  // return "https://mayank.aiktech.in"
+  
 };
 
 const requestMaker = (

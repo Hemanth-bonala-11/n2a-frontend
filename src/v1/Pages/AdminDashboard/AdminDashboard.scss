@@ -3,10 +3,10 @@
     top: 0;
     left: 0;
     bottom: 0;
-    width: 230px;
-    background-color: lightgreen; /* Dark olive green */
+    width: 240px;
+    background-color: #cdebe1; /* Dark olive green */
     color: white;
-    padding: 20px;
+    // padding: 20px;
 }
 
 .admin_dashboard-sidebar ul {
@@ -15,20 +15,24 @@
 }
 
 .admin_dashboard-sidebar li {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    height: 70px;
+    text-align: center;
+    
 }
 
 .admin_dashboard-sidebar a {
-    color: white;
+    color:black;
     text-decoration: none;
     font-size: 18px;
     display: block;
     padding: 10px;
     border-radius: 10px;
+    height: 100%;
 }
 
 .admin_dashboard-sidebar a:hover {
-    background-color: #6c757d; /* Dark grey */
+    background-color: #36cf9f;
 }
 
 .admin_dashboard-container {
@@ -46,7 +50,7 @@
 }
 
 .admin_dashboard-stat-box {
-    background-color: #99AAAB; /* Light blueish grey */
+    background-color: #36cf9f; /* Light blueish grey */
     padding: 15px;
     border-radius: 10px;
     text-align: center;
@@ -61,7 +65,7 @@
 }
 
 .admin_dashboard-stat-box:nth-child(odd) {
-    background-color: #B7CECE; /* Lighter blueish grey */
+    background-color: #36cf9f;
 }
 
 .admin_dashboard-stat-value {
@@ -72,7 +76,8 @@
 
 .admin_dashboard-stat-label {
     font-size: 14px;
-    color: #666;
+    color:black;
+
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -132,17 +137,19 @@
 }
 
 .admin_dashboard-button {
-    background-color: #283618; /* Dark olive green */
+    background-color: #36cf9f; /* Dark olive green */
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    
 }
 
 .admin_dashboard-button:hover {
-    background-color: #99AAAB; /* Light blueish grey */
+    cursor: pointer;
+    background-color: #36cf9f;
 }
 .admin_dashboard-table {
     width: 100%;
@@ -212,9 +219,17 @@ th {
 }
 
 .admin_dashboard-button:hover {
-    background-color: #99AAAB; /* Light blueish grey */
+    cursor: pointer;
+    background-color: #36cf9f;
 }
 
 .active{
-    background-color: #99AAAB;
+    cursor: pointer;
+    background-color: #36cf9f;
+
+
+}
+#root{
+    height: 100vh;
+    width: 100vw;
 }

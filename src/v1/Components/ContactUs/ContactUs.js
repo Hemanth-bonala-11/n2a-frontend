@@ -3,7 +3,7 @@ import './ContactUs.scss'
 const ContactUs=()=>{
     return(
         <div>
-        <div className="main">
+        <div className="mainmap">
         
 
     <div className="form3">

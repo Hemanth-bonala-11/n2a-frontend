@@ -16,15 +16,17 @@
 
 .logo img{
   height: 8vh;
-  border-radius: 15px;
+ border-radius: 15px;
 }
-.nav-links{
+.navbar-links{
     display: flex;
     text-decoration: none;
     justify-content: space-evenly;
     gap: 1vw;
     font-size: large;
     font-weight: 24px;
+    text-align: center;
+    width:25%;
 }
 
 .navbar-auth{
@@ -102,11 +104,13 @@ box-sizing: border-box;
 border: 0.5px solid rgb(121, 116, 116);
 border-style: dashed;
 }
-.nav-link{
+.navbar-link{
     text-decoration: none;
     color: inherit;
+    text-align: center;
+    
 }
-.nav-link:hover{
+.navbar-link:hover{
     color: #20B486;
 }
 
@@ -156,5 +160,10 @@ border-style: dashed;
   }
   .menu-link{
     text-decoration: none;
+
+  }
+  .search-courses{
+    width: 30%;
+    margin-left: 10px;
 
   }
