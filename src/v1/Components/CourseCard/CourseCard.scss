@@ -3,19 +3,21 @@
 {
     display: inline-flex;
     flex-direction:column;
-    margin-left: 3vw;
-    margin-right: 3vw;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
     justify-content: center;
     align-items: center;
     width:280px;
     height:380px;
     border-radius: 10px;
     box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+    margin-bottom: 2vh;
 }
 #cardimage
 {
     width: 70%;
     height:50%;
+    height: 30vh;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }
@@ -89,4 +91,7 @@
 }
 .course-description{
     font-size: 14px
+}
+#cardcontent:hover{
+    cursor: pointer;
 }

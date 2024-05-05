@@ -55,3 +55,37 @@ export const fetchAllCourses = (data)=>{
     return requestMaker(url, "get", {payload,params})
 
 }
+
+export const fetchHomeCategories = (data)=>{
+    const url = `course/homePage/courses`;
+    const payload = {};
+    const params = {...data}
+    return requestMaker(url, "get", {payload,params})
+}
+export const fetchHomePageCategories = (data)=>{
+    const url = `course/homePage/categories`;
+    const payload = {};
+    const params = {...data}
+    return requestMaker(url, "get", {payload,params})
+}
+
+export const fetchCourseDetails = (data)=>{
+    const url = `course/getCourseDetails`;
+    const payload = {...data};
+    const params = {};
+    return requestMaker(url, "post", {payload,params})
+}
+
+export const enrollCourse = (data)=>{
+    const url = `course/enrollCourse`;
+    const payload = {...data};
+    const params = {};
+    return requestMaker(url, "post", {payload,params})
+}
+
+export const fetchCourseContent = (data)=>{
+    const url = `course/course_content`;
+    const payload = {...data};
+    const params = {};
+    return requestMaker(url, "post", {payload,params});
+}

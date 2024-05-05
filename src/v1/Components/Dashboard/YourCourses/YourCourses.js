@@ -5,6 +5,7 @@ import { getToken } from '../../../Utils/generalUtils';
 import { fetchInstructorCourses } from '../../../Api/courseApi';
 import { toast } from 'react-toastify';
 import { InstructorCourseCard } from '../InstructorCourseCard/InstructorCourseCard';
+import Loading from '../../Loading';
 export const YourCourses = ()=>{
     const [courses, setCourses] = useState([]);
     const token = getToken()
@@ -21,15 +22,14 @@ export const YourCourses = ()=>{
     },[])
     return (
         <div className="your-courses-wrapper">
- 
-            {
-                courses?.map((course)=>(
-                    <InstructorCourseCard Course={course}/>
-                ))
-            }
-            
+            <div className='your-courses-heading'><h1>Your Courses</h1></div>
 
-            
+
+            {
+                courses?courses?.map((course)=>(
+                    <InstructorCourseCard Course={course}/>
+                )):<Loading/>
+            }
 
         </div>
     )

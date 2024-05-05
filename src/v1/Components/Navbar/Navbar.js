@@ -38,6 +38,7 @@ export const  Navbar = ()=>{
       }
       
     }
+    console.log(auth,"auth");
     useEffect(()=>{
       try {
         setUserDetails()

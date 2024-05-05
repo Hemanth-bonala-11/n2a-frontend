@@ -83,3 +83,16 @@ flex-grow: 0;
     
     margin-top: 5%;
 }
+.view-all-button-wrapper{
+    margin-left: 60vw;
+}
+.view-all-button{
+    padding: 10px;
+    background-color: #1A906B;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+.view-all-button:hover{
+    cursor: pointer;
+}

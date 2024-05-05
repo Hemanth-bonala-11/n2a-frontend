@@ -14,7 +14,7 @@ export const InstructorCourseCard = ({Course})=>{
                         {Course?.courseName}
                     </h3>
                     <div className='instructor-course-details-description'>
-                        {Course?.description}
+                        {Course?.description.slice(0,70)+"..."}
                     </div>
                 </div>
                 <div className='instructor-course-details-price'>

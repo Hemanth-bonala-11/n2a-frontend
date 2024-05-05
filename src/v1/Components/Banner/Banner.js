@@ -3,8 +3,10 @@ import BannerFrontImage from '../../../Assets/images/banner-front-image.png';
 import bannerImageBackground from '../../../Assets/images/banner-image-background.png'
 import bannerNoofCourses from '../../../Assets/images/banner-no-of-courses.png'
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 export const Banner = ()=>{
-    const [no_of_courses, setNoofCourses] = useState(200)
+    const [no_of_courses, setNoofCourses] = useState(200);
+    const navigate = useNavigate();
     return (
         <div>
             <div className='banner-wrapper'>
@@ -12,9 +14,13 @@ export const Banner = ()=>{
                     <div className='black-heading'>Up Your <span className='green-heading'>Skills</span></div>
                     <div className='black-heading'>To <span className='green-heading'>Advance</span> Your</div>
                     <div className='green-heading'>Career <span className='black-heading'>Path</span></div>
-                    <div className='banner-description'>Learn UI-UX Design skills with weekend UX . The latest online learning system and material that help your knowledge growing.</div>
+                    <div className='banner-description'>Enhance your coding skills with Weekend Code, the ultimate online platform for tech enthusiasts. Access top-notch resources and materials to fuel your journey to coding mastery!</div>
                     <div className='banner-get-started'>
-                        <button className='signup-button'>Get Started</button>
+                        <button className='signup-button' 
+                        onClick={()=>{
+                            navigate("/courses")
+                        }}
+                        >Get Started</button>
                     </div>
 
                 </div>

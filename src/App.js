@@ -26,6 +26,11 @@ import { YourCourses } from './v1/Components/Dashboard/YourCourses/YourCourses.j
 import { useEffect } from 'react';
 import logot from './Assets/images/logo.png'
 import { EnrolledCourses } from './v1/Components/Dashboard/EnrolledCourses/EnrolledCourses.js';
+import { AllCourses } from './v1/Components/AllCourses/AllCourses.js';
+import {CoursePage} from './v1/Pages/CoursePage/CoursePage.js';
+import { CourseContent } from './v1/Pages/CourseContent/CourseContent.js';
+import { AdminDashboard, AdminDashboardComponent, AdminDashboardCourses, AdminDashboardStudents, AdminDashboardTutors, ChangePassword } from './v1/Pages/AdminDashboard/AdminDashboard.js';
+
 
 export const { store } = configureStore();
 function App() {
@@ -49,7 +54,22 @@ function App() {
           <Route path='courses' element={<YourCourses/>}/>
          <Route path='enrolled-courses' element={<EnrolledCourses/>}/>
         </Route>
-        
+        <Route path='/courses' element={<AllCourses/>}/>
+        <Route path='/courses/:category_name' element={<AllCourses/>}/>
+        <Route path='/course/:course_id' element={<><Navbar/><CoursePage/><Footer/></>}/>
+        <Route path='/dashboard/course' element={<CourseContent/>}/>
+        <Route path='/dashboard/admin' element={<AdminDashboard/>}>
+       
+					<Route path="dashboard" element={<AdminDashboardComponent />} />
+					<Route path="courses" element={<AdminDashboardCourses />} />
+					<Route path="students" element={<AdminDashboardStudents />} />
+					<Route path="tutors" element={<AdminDashboardTutors />} />
+					<Route
+						path="changePassword"
+						element={<ChangePassword />}
+					/>
+					
+          </Route>
       </Routes>
      
       <ToastContainer/>

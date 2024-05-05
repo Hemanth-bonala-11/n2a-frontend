@@ -1,26 +1,20 @@
 import { useEffect, useState } from 'react'
 import './Courses.scss'
 import { CategoryCard } from './CategoryCard'
+import { fetchHomePageCategories } from '../../Api/courseApi'
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router'
 export const Courses = ()=>{
-    const [courseCategories, setCourseCategories] = useState([])
+    const [courseCategories, setCourseCategories] = useState([]);
+    const navigate = useNavigate();
     useEffect(()=>{
-        setCourseCategories([{
-            "logo":"https://img.freepik.com/free-vector/e-learning-education-template-vector-technology-ad-banner_53876-125996.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1708387200&semt=ais",
-            "name":"Test",
-            "description": "description"
-        },
-        {
-            "logo":"https://img.freepik.com/free-vector/e-learning-education-template-vector-technology-ad-banner_53876-125996.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1708387200&semt=ais",
-            "name":"Test",
-            "description": "description"
-        },
-        {
-            "logo":"https://img.freepik.com/free-vector/e-learning-education-template-vector-technology-ad-banner_53876-125996.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1708387200&semt=ais",
-            "name":"Test",
-            "description": "description"
-        }
-    ])
+        fetchHomePageCategories().then((data)=>{
+            setCourseCategories(data.data.categories);
+        }).catch((err)=>{
+            toast.error("error while fetching home page categories")
+        })
     },[])
+    
     return (
         <div>
             <div className="courses-wrapper">
