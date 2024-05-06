@@ -74,7 +74,7 @@ const courseId = "6635c85c34f3f70968725738";
           </p>
         </div>
       </div>
-      <div className="course-playlist-wrapper" style={{ width: '20%' }}>
+      <div className="course-playlist-wrapper" style={{ width: '25%' }}>
         <div className="playlist-header">
           <h2>Playlist</h2>
           <button onClick={togglePlaylist}>

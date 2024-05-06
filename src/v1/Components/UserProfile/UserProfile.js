@@ -3,12 +3,21 @@ import './UserProfile.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUserDetails } from '../../Api/authApi';
 import { actionsCreator } from '../../Redux/actions/actionsCreator';
+import { useNavigate } from 'react-router';
 
 const mapStateToProps = ({auth})=>({auth})
 const UserProfile = () => {
     const {auth} = useSelector(mapStateToProps)
     const isLoggedIn = localStorage.getItem('auth_token')
     console.log(isLoggedIn,"is logged in");
+    const navigate = useNavigate();
+    useEffect(()=>{
+        
+    if(auth?.userDetails?.accountType==="Admin"){
+        navigate("/dashboard/admin/dashboard")
+    }
+        
+    },[])
 
     return (
         <div id="promain">

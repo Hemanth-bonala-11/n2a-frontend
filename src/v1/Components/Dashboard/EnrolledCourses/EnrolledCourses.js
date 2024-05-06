@@ -12,35 +12,22 @@ export const EnrolledCourses = ()=>{
         }
         fetchEnrolledCourses(payload).then((res)=>{
             setCourses(res.data.courses)
-            setCourses([{
-                "logo":"https://img.freepik.com/free-vector/e-learning-education-template-vector-technology-ad-banner_53876-125996.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1708387200&semt=ais",
-                "name":"Test",
-                "description": "description"
-            },
-            {
-                "logo":"https://img.freepik.com/free-vector/e-learning-education-template-vector-technology-ad-banner_53876-125996.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1708387200&semt=ais",
-                "name":"Test",
-                "description": "description"
-            },
-            {
-                "logo":"https://img.freepik.com/free-vector/e-learning-education-template-vector-technology-ad-banner_53876-125996.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1708387200&semt=ais",
-                "name":"Test",
-                "description": "description"
-            }
-        ])
+          
         }).catch((err)=>{
             toast.error("error while fetching courses")
         })
 
     },[])
+    
     return (
-        <div>
+        <div id="enrolledcourcesPage">
+            <h2 className="enrolled-courses-heading">Enrolled Courses</h2>
             <div className="enrolled-courses-wrapper">
-                <h2 className="enrolled-courses-heading">Enrolled Courses</h2>
                 {
                     courses?.map((course)=>{
+                        
                         return(
-                            <CourseCard Course={course}/>
+                            <CourseCard course={course}/>
                         )
                     })
                 }

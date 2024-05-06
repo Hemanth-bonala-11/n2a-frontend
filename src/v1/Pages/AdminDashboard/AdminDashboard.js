@@ -1,15 +1,32 @@
 // main.jsx
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Route, Routes, Link, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, Link, NavLink, useNavigate } from 'react-router-dom'
 import './AdminDashboard.scss'
 import { MdFormatListBulletedAdd } from "react-icons/md";
 import { Outlet } from 'react-router-dom'
 import { fetchDashboardContent, fetchDashboardStudentsContent, fetchDashboardTutorsContent } from '../../Api/adminApi'
+import { toast } from 'react-toastify';
+import logo from '../../../Assets/images/logo.png'
+import { useDispatch } from 'react-redux';
+import { actionsCreator } from '../../Redux/actions/actionsCreator';
+
 const Sidebar = () => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch()
+    const logoutHandler = ()=>{
+        localStorage.removeItem('auth_token')
+    navigate('/')
+    window.location.reload()
+    toast.success("logged out successfully");
+    dispatch(actionsCreator.SET_USER_DETAILS())
+    dispatch(actionsCreator.SET_LOGIN({isLoggedin: false}))
+    }
 	return (
 		<div className="admin_dashboard-sidebar">
+            <header><Link to="/"> <img src={logo} className="admin-dashboard-sidebar-header-logo"/> </Link></header>
 			<ul>
+            
 				<li>
 					<NavLink to="dashboard">Dashboard</NavLink>
 				</li>
@@ -24,7 +41,7 @@ const Sidebar = () => {
 				</li>
 				
 				<li>
-					<NavLink to="logout">Logout</NavLink>
+					<NavLink to="logout" onClick={logoutHandler}>Logout</NavLink>
 				</li>
 			</ul>
 		</div>
@@ -85,9 +102,9 @@ export const AdminDashboardComponent = () => {
 								{
                                     course?.studentsEnrolled.length!==0 && course?.studentsEnrolled?.map((c)=>(
                                         <>
-                                        <td>{c.name}</td>
+                                        <td>{c.firstName}</td>
                                         <td>{c.email}</td>
-                                        <td>{c.course}</td>
+                                        <td>{course?.courseName}</td>
                                         <td>{course._id}</td>
                                         
                                         </>

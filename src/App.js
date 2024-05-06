@@ -57,7 +57,7 @@ function App() {
         <Route path='/courses' element={<AllCourses/>}/>
         <Route path='/courses/:category_name' element={<AllCourses/>}/>
         <Route path='/course/:course_id' element={<><Navbar/><CoursePage/><Footer/></>}/>
-        <Route path='/dashboard/course' element={<CourseContent/>}/>
+        <Route path='/dashboard/course/:courseId' element={<CourseContent/>}/>
         <Route path='/dashboard/admin' element={<AdminDashboard/>}>
        
 					<Route path="dashboard" element={<AdminDashboardComponent />} />

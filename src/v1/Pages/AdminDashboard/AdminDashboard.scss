@@ -31,7 +31,7 @@
     height: 100%;
 }
 
-.admin_dashboard-sidebar a:hover {
+.admin_dashboard-sidebar li:hover {
     background-color: #36cf9f;
 }
 
@@ -232,4 +232,13 @@ th {
 #root{
     height: 100vh;
     width: 100vw;
+}
+.admin-dashboard-sidebar-header-logo{
+    margin-left: 4vw;
+    height: 7vh;
+    border-radius: 10px;
+}
+.admin-dashboard-sidebar-header-logo:hover{
+    cursor: pointer;
+  
 }

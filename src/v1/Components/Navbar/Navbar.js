@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './Navbar.scss'
 import logo from '../../../Assets/images/logo.png'
 import { useEffect, useState } from 'react'
@@ -20,11 +20,14 @@ export const  Navbar = ()=>{
     const {auth} = useSelector(mapStatetoProps);
     const isLoggedIn = localStorage.getItem("auth_token")
     const [openProfile, setOpenProfile] = useState(false);
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     const logout = ()=>{
       localStorage.removeItem('auth_token')
       window.location.reload()
-      toast.success("logged out successfully")
+      toast.success("logged out successfully");
+      dispatch(actionsCreator.SET_USER_DETAILS())
+    dispatch(actionsCreator.SET_LOGIN({isLoggedin: false}))
     }
     const setUserDetails = async ()=>{
       try {
@@ -48,6 +51,7 @@ export const  Navbar = ()=>{
       
      
     },[])
+    
     
     return (
         <div>

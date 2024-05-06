@@ -3,10 +3,10 @@ import './CategoryCard.scss'
 import { useNavigate } from 'react-router';
 export const CategoryCard = ({category})=>{
     const navigate = useNavigate();
-    const navigationHandler = (category)=>{
-        const category_name = category?.name.replace("", "_");
-        navigate(`/courses/${category_name}`, {state: category?.course})
-    }
+    // const navigationHandler = (category)=>{
+    //     const category_name = category?.name.replace("", "_");
+    //     navigate(`/courses/${category_name}`, {state: category?.course})
+    // }
     return (
         <div>
             <div className="categories-wrapper">
@@ -21,7 +21,7 @@ export const CategoryCard = ({category})=>{
                     <div>{category?.description}</div>
                 </div>
                 <div className="learn-more-button">
-                 <pre className='vector'  onClick={()=>navigationHandler(category)}>Learn More <span className='vector'>&gt;</span></pre>
+                 <pre className='vector' >Learn More <span className='vector'>&gt;</span></pre>
                 </div>
             </div>
         </div>

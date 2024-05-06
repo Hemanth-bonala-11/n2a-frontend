@@ -7,6 +7,7 @@ export const CourseCard = ({course})=>{
   const navigationHandler = ()=>{
     navigate(`/course/${course._id}`)
   }
+  console.log(course,"course");
     return (
             <div id="card">
       <img src={course?.thumbnail || image
@@ -27,8 +28,8 @@ export const CourseCard = ({course})=>{
           <div id="u1">
             <img src={image} alt="" id="propho" />
             <div>
-              <div id="username" className='author-price'>Jane Cooper</div>
-              <div id="enrolledyear" className='author-price'>2001 Enrolled</div>
+              <div id="username" className='author-price'>{course?.instructor?.firstName}</div>
+              <div id="enrolledyear" className='author-price'>{course?.studentsEnrolled?.length} Enrolled</div>
             </div>
           </div>
           <div id="coursefee">₹{course?.price} </div>

@@ -56,7 +56,9 @@ function Sidebar() {
     localStorage.removeItem('auth_token')
     navigate('/')
     window.location.reload()
-    toast.success("logged out successfully")
+    toast.success("logged out successfully");
+    dispatch(actionsCreator.SET_USER_DETAILS())
+    dispatch(actionsCreator.SET_LOGIN({isLoggedin: false}))
   }
 
   if(auth.userDetails?.accountType === "Student" ){

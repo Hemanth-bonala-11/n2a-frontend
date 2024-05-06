@@ -4,4 +4,15 @@
 }
 .enrolled-courses-heading{
     margin-left: 30vw;
+    margin-top: 20px;
+  
+}
+.enrolledcourcesPage
+{
+    display: flex;
+    flex-direction: column;
+    column-gap: 20px;
+    height: 100vh;
+    overflow-y: scroll;
+    
 }

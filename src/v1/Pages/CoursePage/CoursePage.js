@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { getToken } from '../../Utils/generalUtils';
 import { useSelector } from 'react-redux';
 
+
 const mapStatetoProps = ({auth})=>({auth})
 export const  CoursePage=()=> {
     const [courseData, setCourseData] = useState();
@@ -14,6 +15,7 @@ export const  CoursePage=()=> {
     const isLoggedIn = getToken();
     const navigate = useNavigate();
     const {auth} = useSelector(mapStatetoProps);
+    
     
     
     useEffect(()=>{
@@ -26,7 +28,8 @@ export const  CoursePage=()=> {
             toast.error("error while fetching course data");
             console.log(err.message);
         })
-        if(auth.userDetails.courses.includes(course_id)){
+     
+        if(auth.userDetails?.courses?.length!==0 && auth.userDetails?.courses?.includes(course_id)){
             setButtonText("Go to Course")
         }
     },[])
@@ -46,6 +49,9 @@ export const  CoursePage=()=> {
                     toast.info("login")
                 }
              })
+            }
+            else{
+              navigate(`/dashboard/course/${course_id}`)
             }
             
         } catch (error) {
